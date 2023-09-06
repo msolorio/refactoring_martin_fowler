@@ -12,6 +12,6 @@ describe("test", () => {
       "  Othello: $500.00 (40 seats)\n" +
       "Amount owed is $1,730.00\n" +
       "You earned 47 credits\n"
-    assert.equal(expected, statement(invoices[0], plays))
+    assert.equal(statement(invoices[0], plays), expected);
   })
 })
