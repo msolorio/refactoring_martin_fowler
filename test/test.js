@@ -1,5 +1,5 @@
-const { assert } = require('chai')
-const { statement } = require('../lib/printInvoice')
+const { assert } = require("chai")
+const { statement } = require("../lib/printInvoice")
 const invoices = require("../lib/invoices.json")
 const plays = require("../lib/plays.json")
 
