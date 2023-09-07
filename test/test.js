@@ -1,7 +1,8 @@
 const { assert } = require("chai")
 const { statement, htmlStatement } = require("../lib/statement")
 const invoices = require("../lib/invoices.json")
-const plays = require("../lib/plays.json")
+const plays = require("../lib/plays.json");
+const { createStatementData } = require("../lib/createStatementData");
 
 describe("statement", () => {
   it("renders plain text", () => {
@@ -29,6 +30,68 @@ describe("htmlStatement", () => {
       "<p>Amount owed is $1,730.00</p>\n" +
       "<p>You earned 47 credits</p>\n"
     assert.equal(htmlStatement(invoices[0], plays), expected);
+  });
+});
+
+describe("createStatementData", () => {
+  it("creates data object", () => {
+    const invoice = {
+      "customer": "BigCo",
+      "performances": [
+        {
+          "playID": "hamlet",
+          "audience": 55
+        },
+        {
+          "playID": "as-like",
+          "audience": 35
+        },
+        {
+          "playID": "othello",
+          "audience": 40
+        }
+      ]
+    };
+    const plays = {
+      "hamlet": {"name": "Hamlet", "type": "tragedy"},
+      "as-like": {"name": "As You Like It", "type": "comedy"},
+      "othello": {"name": "Othello", "type": "tragedy"}
+    };
+
+    expected = {
+      customer: 'BigCo',
+      performances: [
+        {
+          playID: 'hamlet',
+          audience: 55,
+          play: { name: 'Hamlet', type: 'tragedy' },
+          amount: 65000,
+          volumeCredits: 25,
+          usd: '$650.00'
+        },
+        {
+          playID: 'as-like',
+          audience: 35,
+          play: { name: 'As You Like It', type: 'comedy' },
+          amount: 58000,
+          volumeCredits: 12,
+          usd: '$580.00'
+        },
+        {
+          playID: 'othello',
+          audience: 40,
+          play: { name: 'Othello', type: 'tragedy' },
+          amount: 50000,
+          volumeCredits: 10,
+          usd: '$500.00'
+        }
+      ],
+      totalAmount: 173000,
+      totalVolumeCredits: 47,
+      usd: '$1,730.00'
+    };
+    
+    assert.deepEqual(createStatementData(invoice, plays), expected);
   });
 });
 
