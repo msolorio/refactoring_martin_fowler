@@ -1,4 +1,4 @@
-const { Book } = require('../changeFunctionDeclaration/changeFunctionDeclaration');
+const { Book } = require('../lib/changeFunctionDeclaration/changeFunctionDeclaration');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 

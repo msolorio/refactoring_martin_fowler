@@ -1,4 +1,4 @@
-const { readingsOutsideRange, Range } = require('../introduceParameterObject/introduceParameterObject2');
+const { readingsOutsideRange, Range } = require('../lib/introduceParameterObject/introduceParameterObject_refactor');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 

@@ -1,4 +1,4 @@
-const { Order, Priority, getHighPriorityOrders } = require('../replacePrimitiveWithObject/replacePrimitiveWithObject2');
+const { Order, Priority, getHighPriorityOrders } = require('../lib/replacePrimitiveWithObject/replacePrimitiveWithObject_refactor');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 

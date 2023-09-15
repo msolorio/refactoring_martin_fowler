@@ -1,4 +1,4 @@
-const { taxableCharge } = require('../combineFunctionsIntoClass/combineFunctionsIntoClass2');
+const { taxableCharge } = require('../lib/combineFunctionsIntoClass/combineFunctionsIntoClass_refactor');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 

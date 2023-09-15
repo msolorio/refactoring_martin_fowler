@@ -1,4 +1,4 @@
-const { Order } = require('../extractVariable/extractVariable1');
+const { Order } = require('../lib/extractVariable/extractVariable_refactor');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
