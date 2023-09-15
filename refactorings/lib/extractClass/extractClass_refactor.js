@@ -2,8 +2,8 @@ class Person {
   constructor ({ name, officeAreaCode, officeNumber }) {
     this._name = name
     this._telephoneNumber = new TelephoneNumber({
-      officeAreaCode,
-      officeNumber
+      areaCode: officeAreaCode,
+      number: officeNumber
     })
   }
 
@@ -12,11 +12,11 @@ class Person {
   }
 
   get officeAreaCode () {
-    return this._telephoneNumber.officeAreaCode
+    return this._telephoneNumber.areaCode
   }
 
   get officeNumber () {
-    return this._telephoneNumber.officeNumber
+    return this._telephoneNumber.number
   }
 
   get telephoneNumber () {
@@ -25,21 +25,21 @@ class Person {
 }
 
 class TelephoneNumber {
-  constructor ({ officeAreaCode, officeNumber }) {
-    this._officeAreaCode = officeAreaCode
-    this._officeNumber = officeNumber
+  constructor ({ areaCode, number }) {
+    this._areaCode = areaCode
+    this._number = number
   }
 
-  get officeAreaCode () {
-    return this._officeAreaCode
+  get areaCode () {
+    return this._areaCode
   }
 
-  get officeNumber () {
-    return this._officeNumber
+  get number () {
+    return this._number
   }
 
   toString () {
-    return `(${this.officeAreaCode}) ${this.officeNumber}`
+    return `(${this.areaCode}) ${this.number}`
   }
 }
 
