@@ -44,6 +44,5 @@ class TelephoneNumber {
 }
 
 module.exports = {
-  Person,
-  TelephoneNumber
+  Person
 }
