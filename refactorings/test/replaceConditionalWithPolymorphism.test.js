@@ -1,4 +1,4 @@
-const { plumages, speeds } = require('../lib/replaceConditionalWithPolymorphism/replaceConditionalWithPolymorphism');
+const { plumages, speeds } = require('../lib/replaceConditionalWithPolymorphism/replaceConditionalWithPolymorphism_refactor');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
