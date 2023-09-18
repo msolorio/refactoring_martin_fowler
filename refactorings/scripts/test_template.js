@@ -1,4 +1,4 @@
-const { REFACTORING_NAME } = require('../REFACTORING_NAME/REFACTORING_NAME');
+const { REFACTORING_NAME } = require('../lib/REFACTORING_NAME/REFACTORING_NAME');
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 

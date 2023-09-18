@@ -4,10 +4,10 @@
 
 cd ..
 
-mkdir "$1"
+mkdir ./lib/"$1"
 
-touch "$1"/"$1".js
-touch "$1"/"$1"2.js
+touch ./lib/"$1"/"$1".js
+touch ./lib/"$1"/"$1"_refactor.js
 
 cp scripts/test_template.js "test/$1.test.js"
 
